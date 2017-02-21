@@ -10,8 +10,6 @@ See [Docker4Wordpress](http://docker4wordpress.org)
 
 - [`4.1`, `latest` (*4.1/Dockerfile*)](https://github.com/wodby/wordpress-varnish/tree/master/4.1/Dockerfile)
 
-# Varnish docker container for WordPress
-
 ## Environment Variables Available for Customization
 
 See more at [wodby/varnish](https://github.com/wodby/varnish)
