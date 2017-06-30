@@ -1,33 +1,42 @@
-# Varnish docker container for WordPress
-
-See [Docker4Wordpress](http://docker4wordpress.org)
+# Varnish for WordPress Docker Container Image
 
 [![Build Status](https://travis-ci.org/wodby/wordpress-varnish.svg?branch=master)](https://travis-ci.org/wodby/wordpress-varnish)
 [![Docker Pulls](https://img.shields.io/docker/pulls/wodby/wordpress-varnish.svg)](https://hub.docker.com/r/wodby/wordpress-varnish)
 [![Docker Stars](https://img.shields.io/docker/stars/wodby/wordpress-varnish.svg)](https://hub.docker.com/r/wodby/wordpress-varnish)
+[![Wodby Slack](http://slack.wodby.com/badge.svg)](http://slack.wodby.com)
 
-## Supported tags and respective `Dockerfile` links
+## Docker Images
 
-- [`4.1`, `latest` (*4.1/Dockerfile*)](https://github.com/wodby/wordpress-varnish/tree/master/4.1/Dockerfile)
+Images are built via [Travis CI](https://travis-ci.org/wodby/wordpress-varnish) and published on [Docker Hub](https://hub.docker.com/r/wodby/wordpress-varnish). 
 
-## Environment Variables Available for Customization
+## Versions
+
+| WordPress | Varnish | Alpine Linux |
+| --------- | ------- | ------------ |
+| 4.x | [4.1](https://github.com/wodby/wordpress-varnish/tree/master/4.1/Dockerfile) | 3.6 |  
+
+## Environment Variables
 
 See more at [wodby/varnish](https://github.com/wodby/varnish)
 
-| Environment Variable | Type | Default Value | Required | Description |
-| -------------------- | -----| ------------- | -------- | ----------- |
-| VARNISH_BACKEND_HOST          | String |          | ✓ | |
-| VARNISH_BACKEND_PORT          | String |          | ✓ | |
-| VARNISH_BIGFILES_SIZE         | Int    | 10485760 |   | | 
-| VARNISH_BIGFILES_TTL          | String | 120s     |   | |
-| VARNISH_MIN_GRACE             | String | 2m       |   | |
-| VARNISH_DEFAULT_TTL           | String | 120s     |   | |
-| VARNISH_ERRORS_GRACE          | String | 15s      |   | |
-| VARNISH_STATIC_TTL            | Int    |          |   | |
-| VARNISH_ALLOW_DEBUG           | Bool   |          |   | | 
-| VARNISH_ALLOW_NOCACHE         | Bool   |          |   | | 
-| VARNISH_CLOUDFLARE            | Bool   |          |   | | 
-| VARNISH_CLOUDFLARE_RAILGUN_IP | Bool   |          |   | | 
-| VARNISH_MOBILE_CASH           | Bool   |          |   | |
-| VARNISH_ADMIN_SUBDOMAIN       | Bool   |          |   | |
-| VARNISH_STRIP_QUERY_PARAMS    | Bool   |          |   | |
+| Variable | Default Value | Description |
+| -------- | ------------- | ----------- | 
+| VARNISH_BACKEND_HOST          |          |   |
+| VARNISH_BACKEND_PORT          |          |   |
+| VARNISH_BIGFILES_SIZE         | 10485760 |   | 
+| VARNISH_BIGFILES_TTL          | 120s     |   |
+| VARNISH_MIN_GRACE             | 2m       |   |
+| VARNISH_DEFAULT_TTL           | 120s     |   |
+| VARNISH_ERRORS_GRACE          | 15s      |   |
+| VARNISH_STATIC_TTL            |          |   |
+| VARNISH_ALLOW_DEBUG           |          |   | 
+| VARNISH_ALLOW_NOCACHE         |          |   | 
+| VARNISH_CLOUDFLARE            |          |   | 
+| VARNISH_CLOUDFLARE_RAILGUN_IP |          |   |
+| VARNISH_MOBILE_CASH           |          |   |
+| VARNISH_ADMIN_SUBDOMAIN       |          |   |
+| VARNISH_STRIP_QUERY_PARAMS    |          |   |
+
+## Complete WordPress Stack
+
+See [Docker4WordPress](https://github.com/wodby/docker4wordpress).
