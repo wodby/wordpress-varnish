@@ -2,7 +2,7 @@ import directors;
 
 backend backend1 {
     .host = "{{ getenv "VARNISH_BACKEND_HOST" }}";
-    .port = "{{ getenv "VARNISH_BACKEND_PORT" }}";
+    .port = "{{ getenv "VARNISH_BACKEND_PORT" "80" }}";
 }
 
 sub vcl_init {
