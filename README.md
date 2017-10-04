@@ -13,7 +13,7 @@ Images are based on [wodby/varnish](https://github.com/wodby/varnish), built via
 
 | Image tag (Dockerfile)                                                     | WordPress | Varnish | Alpine Linux |
 | -------------------------------------------------------------------------- | --------- | ------- | ------------ |
-| [4.1](https://github.com/wodby/wordpress-varnish/tree/master/4/Dockerfile) | 4.x       | 4.1.3   | 3.6          |
+| [4.1](https://github.com/wodby/wordpress-varnish/tree/master/4/Dockerfile) | *         | 4.1.3   | 3.6          |
 
 ## Environment Variables
 
