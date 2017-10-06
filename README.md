@@ -7,13 +7,16 @@
 
 ## Docker Images
 
-Images are based on [wodby/varnish](https://github.com/wodby/varnish), built via [Travis CI](https://travis-ci.org/wodby/wordpress-varnish) and published on [Docker Hub](https://hub.docker.com/r/wodby/wordpress-varnish). 
+* All images are based on Alpine Linux
+* Base image: [wodby/varnish](https://github.com/wodby/varnish)
+* [Travis CI builds](https://travis-ci.org/wodby/wordpress-varnish) 
+* [Docker Hub](https://hub.docker.com/r/wodby/wordpress-varnish)
 
-## Versions
+For better reliability we release images with stability tags (`wodby/wordpress-varnish:4.1-X.X.X`) which correspond to git tags. We **strongly recommend** using images only with stability tags. Below listed basic tags:
 
-| Image tag (Dockerfile)                                                     | WordPress | Varnish | Alpine Linux |
-| -------------------------------------------------------------------------- | --------- | ------- | ------------ |
-| [4.1](https://github.com/wodby/wordpress-varnish/tree/master/4/Dockerfile) | *         | 4.1.3   | 3.6          |
+| Image tag (Dockerfile)                                                              | WordPress | Varnish | 
+| ----------------------------------------------------------------------------------- | --------- | ------- | 
+| [4.1 (latest)](https://github.com/wodby/wordpress-varnish/tree/master/4/Dockerfile) | *         | 4.1.3   | 
 
 ## Environment Variables
 
