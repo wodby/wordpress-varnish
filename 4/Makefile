@@ -5,6 +5,7 @@ TAG ?= 4.1
 
 REPO = wodby/wordpress-varnish
 NAME = wordpress-varnish-$(VARNISH_VER)
+FROM_TAG = $(VARNISH_VER)
 
 ifneq ($(FROM_STABILITY_TAG),)
     FROM_TAG := $(FROM_TAG)-$(FROM_STABILITY_TAG)
