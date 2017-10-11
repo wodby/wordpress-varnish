@@ -1,6 +1,6 @@
-ARG VARNISH_VER
+ARG FROM_TAG
 
-FROM wodby/varnish:${VARNISH_VER}
+FROM wodby/varnish:${FROM_TAG}
 
 COPY templates /etc/gotpl
 COPY init /docker-entrypoint-init.d/
