@@ -7,35 +7,38 @@
 
 ## Docker Images
 
-Images are built via [Travis CI](https://travis-ci.org/wodby/wordpress-varnish) and published on [Docker Hub](https://hub.docker.com/r/wodby/wordpress-varnish). 
+* All images are based on Alpine Linux
+* Base image: [wodby/varnish](https://github.com/wodby/varnish)
+* [Travis CI builds](https://travis-ci.org/wodby/wordpress-varnish) 
+* [Docker Hub](https://hub.docker.com/r/wodby/wordpress-varnish)
 
-## Versions
+For better reliability we release images with stability tags (`wodby/wordpress-varnish:4.1-X.X.X`) which correspond to git tags. We **strongly recommend** using images only with stability tags. Below listed basic tags:
 
-| WordPress | Varnish | Alpine Linux |
-| --------- | ------- | ------------ |
-| 4.x | [4.1](https://github.com/wodby/wordpress-varnish/tree/master/4.1/Dockerfile) | 3.6 |  
+| Image tag (Dockerfile)                                                              | WordPress | Varnish | 
+| ----------------------------------------------------------------------------------- | --------- | ------- | 
+| [4.1 (latest)](https://github.com/wodby/wordpress-varnish/tree/master/4/Dockerfile) | *         | 4.1.3   | 
 
 ## Environment Variables
 
 See more at [wodby/varnish](https://github.com/wodby/varnish)
 
-| Variable | Default Value | Description |
-| -------- | ------------- | ----------- | 
-| VARNISH_BACKEND_HOST          |          |   |
-| VARNISH_BACKEND_PORT          |          |   |
-| VARNISH_BIGFILES_SIZE         | 10485760 |   | 
-| VARNISH_BIGFILES_TTL          | 120s     |   |
-| VARNISH_MIN_GRACE             | 2m       |   |
-| VARNISH_DEFAULT_TTL           | 120s     |   |
-| VARNISH_ERRORS_GRACE          | 15s      |   |
-| VARNISH_STATIC_TTL            |          |   |
-| VARNISH_ALLOW_DEBUG           |          |   | 
-| VARNISH_ALLOW_NOCACHE         |          |   | 
-| VARNISH_CLOUDFLARE            |          |   | 
-| VARNISH_CLOUDFLARE_RAILGUN_IP |          |   |
-| VARNISH_MOBILE_CASH           |          |   |
-| VARNISH_ADMIN_SUBDOMAIN       |          |   |
-| VARNISH_STRIP_QUERY_PARAMS    |          |   |
+| Variable                      | Default Value | Description |
+| ----------------------------- | ------------- | ----------- |
+| VARNISH_BACKEND_HOST          |               |             |
+| VARNISH_BACKEND_PORT          | 80            |             |
+| VARNISH_BIGFILES_SIZE         | 10485760      |             |
+| VARNISH_BIGFILES_TTL          | 120s          |             |
+| VARNISH_MIN_GRACE             | 2m            |             |
+| VARNISH_DEFAULT_TTL           | 120s          |             |
+| VARNISH_ERRORS_GRACE          | 15s           |             |
+| VARNISH_STATIC_TTL            |               |             |
+| VARNISH_ALLOW_DEBUG           |               |             |
+| VARNISH_ALLOW_NOCACHE         |               |             |
+| VARNISH_CLOUDFLARE            |               |             |
+| VARNISH_CLOUDFLARE_RAILGUN_IP |               |             |
+| VARNISH_MOBILE_CASH           |               |             |
+| VARNISH_ADMIN_SUBDOMAIN       |               |             |
+| VARNISH_STRIP_QUERY_PARAMS    |               |             |
 
 ## Complete WordPress Stack
 
