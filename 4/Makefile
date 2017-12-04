@@ -1,7 +1,7 @@
 -include env_make
 
-VARNISH_VER ?= 4.1.3
-TAG ?= 4.1
+VARNISH_VER ?= 4.1
+TAG ?= $(VARNISH_VER)
 
 REPO = wodby/wordpress-varnish
 NAME = wordpress-varnish-$(VARNISH_VER)
@@ -9,6 +9,12 @@ FROM_TAG = $(VARNISH_VER)
 
 ifneq ($(FROM_STABILITY_TAG),)
     FROM_TAG := $(FROM_TAG)-$(FROM_STABILITY_TAG)
+endif
+
+ifneq ($(STABILITY_TAG),)
+    ifneq ($(TAG),latest)
+         override TAG := $(TAG)-$(STABILITY_TAG)
+    endif
 endif
 
 .PHONY: build test test-clean push shell run start stop logs clean release
