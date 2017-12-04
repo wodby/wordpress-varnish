@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/wodby/wordpress-varnish.svg?branch=master)](https://travis-ci.org/wodby/wordpress-varnish)
 [![Docker Pulls](https://img.shields.io/docker/pulls/wodby/wordpress-varnish.svg)](https://hub.docker.com/r/wodby/wordpress-varnish)
 [![Docker Stars](https://img.shields.io/docker/stars/wodby/wordpress-varnish.svg)](https://hub.docker.com/r/wodby/wordpress-varnish)
+[![Docker Layers](https://images.microbadger.com/badges/image/wodby/wordpress-varnish.svg)](https://microbadger.com/images/wodby/wordpress-varnish)
 [![Wodby Slack](http://slack.wodby.com/badge.svg)](http://slack.wodby.com)
 
 ## Docker Images
@@ -12,11 +13,11 @@
 * [Travis CI builds](https://travis-ci.org/wodby/wordpress-varnish) 
 * [Docker Hub](https://hub.docker.com/r/wodby/wordpress-varnish)
 
-For better reliability we release images with stability tags (`wodby/wordpress-varnish:4.1-X.X.X`) which correspond to git tags. We **strongly recommend** using images only with stability tags. Below listed basic tags:
+Supported tags and respective `Dockerfile` links:
 
-| Image tag (Dockerfile)                                                              | WordPress | Varnish | 
-| ----------------------------------------------------------------------------------- | --------- | ------- | 
-| [4.1 (latest)](https://github.com/wodby/wordpress-varnish/tree/master/4/Dockerfile) | *         | 4.1.3   | 
+* `4`, `4.1`, `latest` [_(Dockerfile)_](https://github.com/wodby/wordpress-varnish/tree/master/4/Dockerfile)
+
+For better reliability we additionally release images with stability tags (`wodby/wordpress-varnish:4.1-X.X.X`) which correspond to [git tags](https://github.com/wodby/wordpress-varnish/releases). We **strongly recommend** using images only with stability tags. 
 
 ## Environment Variables
 
