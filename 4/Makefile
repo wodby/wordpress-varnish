@@ -5,10 +5,10 @@ TAG ?= $(VARNISH_VER)
 
 REPO = wodby/wordpress-varnish
 NAME = wordpress-varnish-$(VARNISH_VER)
-FROM_TAG = $(VARNISH_VER)
+BASE_IMAGE_TAG = $(VARNISH_VER)
 
-ifneq ($(FROM_STABILITY_TAG),)
-    FROM_TAG := $(FROM_TAG)-$(FROM_STABILITY_TAG)
+ifneq ($(BASE_IMAGE_STABILITY_TAG),)
+    BASE_IMAGE_TAG := $(BASE_IMAGE_TAG)-$(BASE_IMAGE_STABILITY_TAG)
 endif
 
 ifneq ($(STABILITY_TAG),)
@@ -22,7 +22,7 @@ endif
 default: build
 
 build:
-	docker build -t $(REPO):$(TAG) --build-arg FROM_TAG=$(FROM_TAG) ./
+	docker build -t $(REPO):$(TAG) --build-arg BASE_IMAGE_TAG=$(BASE_IMAGE_TAG) ./
 
 test:
 	cd ./test && IMAGE=$(REPO):$(TAG) ./test.sh
