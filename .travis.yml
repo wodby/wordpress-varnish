@@ -5,20 +5,9 @@ services:
 
 env:
   global:
-    - DOCKER_COMPOSE_VERSION=1.10.0
-    - DOCKER_VERSION=17.06.2
     - LATEST_TAG=4.1
-    - FROM_STABILITY_TAG=
   matrix:
     - VARNISH_VER=4.1 TAG=4.1 EXTRA_TAG=4
-
-install:
-  - sudo apt-get update
-  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce="${DOCKER_VERSION}~ce-0~ubuntu"
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
 
 script:
   - cd ./"${VARNISH_VER:0:1}"
@@ -46,4 +35,5 @@ after_success: |
 notifications:
   on_failure: never
   slack:
-    secure: "Zy4VL3PDi+3U3N2ITjSYQ9BAiERYSsRcg7GUco1dJbNYo2hAnpucyuwj4By5S8U2gih0q0Y2o4JPOm6h+UOmWLzqw3mWR4iZK+exHkDVBxGNkD9+s0/oWm3yaMI0yPpVsBF328hkM7d/L4Uol8ZuJpkzK0Z8I3yRsfPkr4gWfSFevG8fVzFqyr2b121Prskz+xaMSV0FWuXWd03PX0ZS1DxJtxcvtoZCW2yH+2HMtFNZbruTIyrnPm2DoiSox0FHW9p83YtTn5elBLTpylw14aGdiKdianPzaGP/H1GzhV6q+41Tqf+VWn5qcYMAnZRFzrF8MXXP0bCB+uOJpEBSuJc08EWZoh2pDUefn7zti8kDZScvYhj3Jtisjqhg/2JduLqFjHDUpSRgFVXyDcyfHaAOH3cgynzhA38/uSEqX0/79o/Lh4KthTvJTZ6/GBf4qEUqA7wCAIX8xS8JaaGNXg3DbK8mW+u+kgdaiu1MHq6GaznrL6kEIEpseSBqIBbVRRVN7cK90XKJGk/Ei6CS0kLkEvrU3Wr8uIxIbYj0INIy3dDe0KjFLBBdejtv6WDHDgwVkGtY1WMTMsFY6r5o8NjxfOjn4iWXJhNzGigX7mb0U74QrUcwWCKc9Zt/9FSSLFlTQ98kqdTZTyecQ6XDx5UC6kywSUv1hW4/w0bN/TY="
+    secure: |
+      Zy4VL3PDi+3U3N2ITjSYQ9BAiERYSsRcg7GUco1dJbNYo2hAnpucyuwj4By5S8U2gih0q0Y2o4JPOm6h+UOmWLzqw3mWR4iZK+exHkDVBxGNkD9+s0/oWm3yaMI0yPpVsBF328hkM7d/L4Uol8ZuJpkzK0Z8I3yRsfPkr4gWfSFevG8fVzFqyr2b121Prskz+xaMSV0FWuXWd03PX0ZS1DxJtxcvtoZCW2yH+2HMtFNZbruTIyrnPm2DoiSox0FHW9p83YtTn5elBLTpylw14aGdiKdianPzaGP/H1GzhV6q+41Tqf+VWn5qcYMAnZRFzrF8MXXP0bCB+uOJpEBSuJc08EWZoh2pDUefn7zti8kDZScvYhj3Jtisjqhg/2JduLqFjHDUpSRgFVXyDcyfHaAOH3cgynzhA38/uSEqX0/79o/Lh4KthTvJTZ6/GBf4qEUqA7wCAIX8xS8JaaGNXg3DbK8mW+u+kgdaiu1MHq6GaznrL6kEIEpseSBqIBbVRRVN7cK90XKJGk/Ei6CS0kLkEvrU3Wr8uIxIbYj0INIy3dDe0KjFLBBdejtv6WDHDgwVkGtY1WMTMsFY6r5o8NjxfOjn4iWXJhNzGigX7mb0U74QrUcwWCKc9Zt/9FSSLFlTQ98kqdTZTyecQ6XDx5UC6kywSUv1hW4/w0bN/TY=
