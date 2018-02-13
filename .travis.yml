@@ -6,7 +6,7 @@ services:
 env:
   global:
     - LATEST_TAG=4.1
-    - BASE_IMAGE_STABILITY_TAG=2.3.0
+    - BASE_IMAGE_STABILITY_TAG=2.4.0
   matrix:
     - VARNISH_VER=4.1 TAG=4.1 EXTRA_TAG=4
 
