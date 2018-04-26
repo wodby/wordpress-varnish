@@ -12,6 +12,11 @@ function _gotpl {
 
 mkdir -p /etc/varnish/conf /etc/varnish/lib
 
+if [[ -z "${VARNISH_PURGE_KEY}" ]]; then
+    export VARNISH_PURGE_KEY=$(pwgen -s 64 1)
+    echo "Varnish purge key is missing. Generating random: ${VARNISH_PURGE_KEY}"
+fi
+
 _gotpl 'varnishd.init.d.tpl' '/etc/init.d/varnishd'
 _gotpl 'secret.tpl' '/etc/varnish/secret'
 _gotpl 'default.vcl.tpl' '/etc/varnish/default.vcl'

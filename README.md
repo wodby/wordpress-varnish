@@ -22,23 +22,24 @@ Supported tags and respective `Dockerfile` links:
 
 ## Environment Variables
 
-| Variable                        | Default Value | Description |
-| ------------------------------- | ------------- | ----------- |
-| `VARNISH_BACKEND_HOST`          |               |             |
-| `VARNISH_BACKEND_PORT`          | `80`          |             |
-| `VARNISH_BIGFILES_SIZE`         | `10485760`    |             |
-| `VARNISH_BIGFILES_TTL`          | `120s`        |             |
-| `VARNISH_MIN_GRACE`             | `2m`          |             |
-| `VARNISH_DEFAULT_TTL`           | `120s`        |             |
-| `VARNISH_ERRORS_GRACE`          | `15s`         |             |
-| `VARNISH_STATIC_TTL`            |               |             |
-| `VARNISH_ALLOW_DEBUG`           |               |             |
-| `VARNISH_ALLOW_NOCACHE`         |               |             |
-| `VARNISH_CLOUDFLARE`            |               |             |
-| `VARNISH_CLOUDFLARE_RAILGUN_IP` |               |             |
-| `VARNISH_MOBILE_CASH`           |               |             |
-| `VARNISH_ADMIN_SUBDOMAIN`       |               |             |
-| `VARNISH_STRIP_QUERY_PARAMS`    |               |             |
+| Variable                        | Default Value | Description                           |
+| ------------------------------- | ------------- | ------------------------------------- |
+| `VARNISH_ADMIN_SUBDOMAIN`       |               |                                       |
+| `VARNISH_ALLOW_DEBUG`           |               |                                       |
+| `VARNISH_ALLOW_NOCACHE`         |               |                                       |
+| `VARNISH_BACKEND_HOST`          |               |                                       |
+| `VARNISH_BACKEND_PORT`          | `80`          |                                       |
+| `VARNISH_BIGFILES_SIZE`         | `10485760`    |                                       |
+| `VARNISH_BIGFILES_TTL`          | `120s`        |                                       |
+| `VARNISH_CLOUDFLARE_RAILGUN_IP` |               |                                       |
+| `VARNISH_CLOUDFLARE`            |               |                                       |
+| `VARNISH_DEFAULT_TTL`           | `120s`        |                                       |
+| `VARNISH_ERRORS_GRACE`          | `15s`         |                                       |
+| `VARNISH_MIN_GRACE`             | `2m`          |                                       |
+| `VARNISH_MOBILE_CASH`           |               |                                       |
+| `VARNISH_PURGE_KEY`             |               | Will be randomly generated if missing |
+| `VARNISH_STATIC_TTL`            |               |                                       |
+| `VARNISH_STRIP_QUERY_PARAMS`    |               |                                       |
 
 See [wodby/varnish](https://github.com/wodby/varnish) for all variables.
 
