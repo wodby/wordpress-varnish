@@ -33,7 +33,7 @@ sub purge_page {
 # always set the X-VC-Purge-Method header.
 
 sub vcl_recv {
-    set req.http.X-VC-My-Purge-Key = "";
+    set req.http.X-VC-My-Purge-Key = "{{ getenv "VARNISH_PURGE_KEY" }}";
     if (req.method == "PURGE") {
         if (req.http.X-VC-Purge-Key == req.http.X-VC-My-Purge-Key) {
             set req.http.X-VC-Purge-Key-Auth = "true";
