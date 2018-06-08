@@ -35,14 +35,17 @@ sub purge_page {
 sub vcl_recv {
     set req.http.X-VC-My-Purge-Key = "{{ getenv "VARNISH_PURGE_KEY" }}";
     if (req.method == "PURGE") {
+        {{ if not (getenv "VARNISH_ALLOW_UNRESTRICTED_PURGE") }}
         if (req.http.X-VC-Purge-Key == req.http.X-VC-My-Purge-Key) {
             set req.http.X-VC-Purge-Key-Auth = "true";
         } else {
             set req.http.X-VC-Purge-Key-Auth = "false";
         }
-        if (client.ip !~ purge && req.http.X-VC-Purge-Key-Auth != "true") {
+        # Allow unrestricted purge from internal network.
+        if (req.http.X-Real-IP && req.http.X-VC-Purge-Key-Auth != "true") {
             return (synth(405, "Not allowed from " + client.ip));
         }
+        {{ end }}
 
         if (req.http.X-VC-Purge-Method) {
             if (req.http.X-VC-Purge-Method ~ "(?i)regex") {
