@@ -4,10 +4,7 @@ services:
   - docker
 
 env:
-  global:
-    - LATEST_TAG=4.1
-  matrix:
-    - VARNISH_VER=4.1 TAG=4.1 EXTRA_TAG=4
+  - VARNISH_VER=4.1 TAGS=4.1,4,latest
 
 script:
   - cd ./"${VARNISH_VER:0:1}"
